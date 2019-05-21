@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 
 export class TodoItem extends Component {
-
   getStyle = () => {
-    return {
+    return { 
       background: '#f4f4f4',
       padding: '10px',
       borderBottom: '1px #ccc dotted',
@@ -15,29 +14,29 @@ export class TodoItem extends Component {
   render() {
     const { id, title } = this.props.todo;
     return (
-      <div style={this.getStyle()}>
+      <div style={ this.getStyle() }>
         <p>
           <input type="checkbox" onChange={this.props.toggleComplete.bind(this, id)} /> {' '}
-          { title }
-          <button style={btnStyle} onClick={this.props.delTodo.bind(this, id)} >X</button>
+          {title }
+          <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>X</button>
         </p>
       </div>
     )
   }
 }
 
-// PropTypes
-TodoItem.propTypes = {
-    todo: PropTypes.object.isRequired
-  }
+// PropTypes - good idea but not required
+TodoItem.propTypes = { //Name of the classs
+  todo: PropTypes.object.isRequired
+}
 
 const btnStyle = {
   background: '#ff0000',
   color: '#fff',
+  fontWeight: 'bold',
   border: 'none',
-  padding: '3px 8px',
+  padding: '5px 9px',
   borderRadius: '50%',
-  cursor: 'pointer',
   float: 'right'
 }
 
