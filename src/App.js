@@ -41,7 +41,7 @@ class App extends Component {
       title: title,
       completed: false
     }
-    this.setState({todos: [...this.state.todos, newTodo] })
+    this.setState({todos: [newTodo, ...this.state.todos] })
   }
 
   render() {
